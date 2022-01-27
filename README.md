@@ -31,4 +31,4 @@ Pomelo.EntityFrameworkCore.MySql 2.1.1
 
 MySql 8.0.12
 
-Visual Strudio 2019
+Visual Studio 2019
