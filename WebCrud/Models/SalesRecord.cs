@@ -1,4 +1,5 @@
 ﻿using System;
+using WebCrud.Models.Enums;
 
 namespace WebCrud.Models
 {
@@ -21,6 +22,10 @@ namespace WebCrud.Models
             Amount = amount;
             Status = status;
             Seller = seller;
+        }
+
+        public SalesRecord(int v1, DateTime dateTime, double v2, SalesStatus billed, Seller s1)
+        {
         }
     }
 }

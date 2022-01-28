@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebCrud.Data.Models;
+using WebCrud.Data;
 
 namespace WebCrud
 {
@@ -39,14 +40,17 @@ namespace WebCrud
             services.AddDbContext<WebCrudContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("WebCrudContext"), builder =>
                         builder.MigrationsAssembly("WebCrud")));
+
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
