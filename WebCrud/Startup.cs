@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebCrud.Data.Models;
 using WebCrud.Data;
+using WebCrud.Services;
 
 namespace WebCrud
 {
@@ -42,6 +43,7 @@ namespace WebCrud
                         builder.MigrationsAssembly("WebCrud")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
