@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebCrud.Models;
+using WebCrud.Models.ViewModels;
 using WebCrud.Services;
 
 namespace WebCrud.Controllers
@@ -11,10 +12,12 @@ namespace WebCrud.Controllers
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService;
+        private readonly DepartmentService _departmentService;
 
-        public SellersController(SellerService sellerService)
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
         public IActionResult Index()
         {
@@ -24,7 +27,9 @@ namespace WebCrud.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.findAll();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
