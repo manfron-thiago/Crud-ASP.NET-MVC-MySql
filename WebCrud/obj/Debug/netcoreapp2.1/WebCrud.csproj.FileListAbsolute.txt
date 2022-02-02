@@ -43,3 +43,4 @@ C:\Users\thiag\Desktop\Crud\WebCrud\WebCrud\obj\Debug\netcoreapp2.1\Razor\Views\
 C:\Users\thiag\Desktop\Crud\WebCrud\WebCrud\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Create.cshtml.g.cs
 C:\Users\thiag\Desktop\Crud\WebCrud\WebCrud\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Delete.cshtml.g.cs
 C:\Users\thiag\Desktop\Crud\WebCrud\WebCrud\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Details.cshtml.g.cs
+C:\Users\thiag\Desktop\Crud\WebCrud\WebCrud\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Edit.cshtml.g.cs
