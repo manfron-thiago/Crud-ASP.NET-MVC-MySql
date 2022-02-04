@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using WebCrud.Data.Models;
 using WebCrud.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebCrud.Services
 {
@@ -13,9 +15,9 @@ namespace WebCrud.Services
         {
             _context = context;
         }
-        public List<Department> findAll()
+        public async Task<List<Department>> findAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
