@@ -38,7 +38,7 @@ namespace WebCrud.Services
                 _context.Seller.Remove(obj);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
                 throw new IntegrityException("Vendedor não pode ser deletado, pois o mesmo há vendas.");
             }
